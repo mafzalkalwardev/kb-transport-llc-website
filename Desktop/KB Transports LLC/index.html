@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KB Transport LLC | Professional Truck Dispatch Services Across America</title>
+<meta name="description" content="KB Transport LLC is a trusted independent dispatch and logistics company serving owner operators and small fleets across all 48 US states. Maximize your miles, maximize your profits."/>
+<meta name="keywords" content="truck dispatch, freight dispatch, owner operator, carrier services, load sourcing, rate negotiation, KB Transport, Cedar Rapids Iowa, nationwide dispatch"/>
+<meta property="og:title" content="KB Transport LLC | Professional Truck Dispatch Services"/>
+<meta property="og:description" content="Professional trucking dispatch and logistics solutions helping owner operators and carriers earn more while keeping their trucks moving."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+  :root {
+    --navy: #0F172A;
+    --navy-800: #1E293B;
+    --navy-700: #253349;
+    --navy-600: #334155;
+    --blue: #2563EB;
+    --blue-light: #3B82F6;
+    --blue-dark: #1D4ED8;
+    --orange: #F97316;
+    --orange-dark: #EA6C0A;
+    --white: #FFFFFF;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --transition: cubic-bezier(0.4,0,0.2,1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: 'Inter', sans-serif; color: var(--navy); background: var(--navy); scroll-behavior: smooth; }
+  body { overflow-x: hidden; background: var(--navy); }
+
+  /* ── LOADING SCREEN ── */
+  #loader {
+    position: fixed; inset: 0; background: var(--navy); z-index: 9999;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  }
+  .loader-logo { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 2.5rem; color: var(--white); letter-spacing: -1px; }
+  .loader-logo span { color: var(--orange); }
+  .loader-bar-wrap { width: 240px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+  .loader-bar { height: 100%; background: linear-gradient(90deg, var(--blue), var(--orange)); width: 0; border-radius: 99px; animation: loaderFill 1.8s var(--transition) forwards; }
+  @keyframes loaderFill { to { width: 100%; } }
+  .loader-text { color: var(--gray-400); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    background: rgba(15,23,42,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s var(--transition);
+  }
+  nav.scrolled { background: rgba(15,23,42,0.97); box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
+  .nav-inner {
+    max-width: 1400px; margin: 0 auto; padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between; height: 72px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--white);
+    text-decoration: none; letter-spacing: -0.5px;
+  }
+  .nav-logo-icon {
+    width: 40px; height: 40px; background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 900; color: white; flex-shrink: 0;
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-links {
+    display: flex; align-items: center; gap: 0.25rem; list-style: none;
+  }
+  .nav-links a {
+    color: var(--gray-300); text-decoration: none; font-size: 0.875rem; font-weight: 500;
+    padding: 0.5rem 0.875rem; border-radius: 8px; transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: var(--white);
+    text-decoration: none; font-size: 0.875rem; font-weight: 700;
+    padding: 0.6rem 1.5rem; border-radius: 8px; transition: all 0.25s;
+    letter-spacing: 0.3px; box-shadow: 0 4px 15px rgba(249,115,22,0.35);
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 25px rgba(249,115,22,0.5); }
+  .nav-hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none;
+  }
+  .nav-hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+  .mobile-menu {
+    display: none; position: fixed; inset: 72px 0 0; background: var(--navy-800);
+    z-index: 999; flex-direction: column; padding: 2rem; gap: 0.5rem; overflow-y: auto;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: var(--gray-300); text-decoration: none; font-size: 1.1rem; font-weight: 500;
+    padding: 1rem; border-radius: 10px; transition: all 0.2s; border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .mobile-menu a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+
+  /* ── SECTION SHARED ── */
+  section { position: relative; overflow: hidden; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.35);
+    color: var(--blue-light); font-size: 0.75rem; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 99px; margin-bottom: 1.25rem;
+  }
+  .section-label::before { content: ''; width: 6px; height: 6px; background: var(--blue-light); border-radius: 50%; }
+  .section-heading {
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white); line-height: 1.15; letter-spacing: -1px;
+  }
+  .section-heading span { color: var(--orange); }
+  .section-sub {
+    color: var(--gray-400); font-size: 1.1rem; line-height: 1.7; max-width: 600px;
+    margin-top: 1rem;
+  }
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+  .py-section { padding: 7rem 0; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh; position: relative; display: flex; align-items: center;
+    background: linear-gradient(160deg, #0F172A 0%, #0a1628 50%, #0d1f3c 100%);
+    padding-top: 72px;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 60% 40%, rgba(37,99,235,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 70%, rgba(249,115,22,0.08) 0%, transparent 50%);
+  }
+  .hero-grid-overlay {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-truck-bg {
+    position: absolute; right: -5%; top: 50%; transform: translateY(-50%);
+    width: 55%; opacity: 0.07; pointer-events: none;
+    filter: blur(1px);
+  }
+  .hero-content { position: relative; z-index: 2; width: 100%; }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 1.75rem;
+    background: rgba(37,99,235,0.12); border: 1px solid rgba(37,99,235,0.3);
+    padding: 0.5rem 1rem 0.5rem 0.5rem; border-radius: 99px;
+  }
+  .hero-badge-dot {
+    width: 28px; height: 28px; background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    border-radius: 99px; display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .hero-badge span { color: var(--gray-300); font-size: 0.82rem; font-weight: 500; }
+  .hero-headline {
+    font-family: 'Poppins', sans-serif; font-weight: 900;
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem); line-height: 1.05;
+    color: var(--white); letter-spacing: -2px; margin-bottom: 1.5rem;
+  }
+  .hero-headline .accent { color: var(--orange); }
+  .hero-headline .line2 { color: var(--blue-light); }
+  .hero-sub {
+    color: var(--gray-300); font-size: 1.15rem; line-height: 1.75; max-width: 520px; margin-bottom: 2.5rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    color: white; text-decoration: none; font-weight: 700; font-size: 1rem;
+    padding: 0.875rem 2rem; border-radius: 10px; transition: all 0.25s;
+    box-shadow: 0 8px 30px rgba(249,115,22,0.4); border: none; cursor: pointer;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(249,115,22,0.5); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+    color: white; text-decoration: none; font-weight: 600; font-size: 1rem;
+    padding: 0.875rem 2rem; border-radius: 10px; transition: all 0.25s; cursor: pointer;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .hero-stat-card {
+    background: rgba(255,255,255,0.04); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.25rem;
+    transition: all 0.3s;
+  }
+  .hero-stat-card:hover { border-color: rgba(37,99,235,0.4); background: rgba(37,99,235,0.07); transform: translateY(-3px); }
+  .hero-stat-num {
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 2rem;
+    color: var(--white); letter-spacing: -1px; line-height: 1;
+  }
+  .hero-stat-num .unit { color: var(--orange); font-size: 1.5rem; }
+  .hero-stat-label { color: var(--gray-400); font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.4rem; }
+  .hero-right { position: relative; }
+  .hero-truck-card {
+    background: rgba(255,255,255,0.04); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden;
+    position: relative;
+  }
+  .hero-truck-card img { width: 100%; height: 320px; object-fit: cover; display: block; opacity: 0.9; }
+  .hero-truck-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(15,23,42,0.95), transparent);
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  .hero-truck-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(37,99,235,0.9); backdrop-filter: blur(10px);
+    border-radius: 8px; padding: 0.5rem 1rem;
+  }
+  .hero-truck-badge span { color: white; font-size: 0.85rem; font-weight: 600; }
+  .hero-floating-card {
+    position: absolute; top: -20px; right: -20px;
+    background: rgba(15,23,42,0.9); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 14px;
+    padding: 1rem 1.25rem; display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .hero-floating-icon {
+    width: 42px; height: 42px; background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+  }
+  .hero-floating-text .num { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--white); line-height: 1; }
+  .hero-floating-text .lbl { color: var(--gray-400); font-size: 0.72rem; margin-top: 2px; }
+  .hero-floating-card2 {
+    position: absolute; bottom: -20px; left: -20px;
+    background: rgba(15,23,42,0.9); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 14px;
+    padding: 1rem 1.25rem; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .stars { color: #FBBF24; font-size: 0.85rem; margin-bottom: 4px; }
+  .review-text { color: var(--gray-300); font-size: 0.78rem; }
+  .review-author { color: var(--white); font-size: 0.82rem; font-weight: 600; margin-top: 4px; }
+  .scroll-indicator {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;
+  }
+  .scroll-indicator span { color: var(--gray-500); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
+  .scroll-dot {
+    width: 24px; height: 40px; border: 2px solid rgba(255,255,255,0.2); border-radius: 99px;
+    display: flex; justify-content: center; padding-top: 6px;
+  }
+  .scroll-dot::after {
+    content: ''; width: 4px; height: 8px; background: var(--orange); border-radius: 99px;
+    animation: scrollBounce 2s infinite;
+  }
+  @keyframes scrollBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+
+  /* ── ABOUT ── */
+  #about { background: var(--gray-50); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-img-wrap { position: relative; }
+  .about-img-main {
+    width: 100%; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+  }
+  .about-img-main img { width: 100%; height: 420px; object-fit: cover; display: block; }
+  .about-img-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    border-radius: 16px; padding: 1.5rem; text-align: center; color: white;
+    box-shadow: 0 15px 40px rgba(37,99,235,0.4);
+  }
+  .about-img-badge .num { font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 2.5rem; line-height: 1; }
+  .about-img-badge .lbl { font-size: 0.78rem; font-weight: 500; opacity: 0.85; margin-top: 4px; }
+  .about-content .section-heading { color: var(--navy); }
+  .about-content .section-sub { color: var(--gray-600); }
+  .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .about-feat {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: white; border: 1px solid var(--gray-200); border-radius: 12px;
+    padding: 1rem; transition: all 0.3s;
+  }
+  .about-feat:hover { border-color: var(--blue); box-shadow: 0 8px 25px rgba(37,99,235,0.1); transform: translateY(-2px); }
+  .about-feat-icon {
+    width: 38px; height: 38px; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(37,99,235,0.05));
+    border: 1px solid rgba(37,99,235,0.2); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .about-feat h4 { color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+  .about-feat p { color: var(--gray-500); font-size: 0.78rem; line-height: 1.5; }
+  .about-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 4rem; }
+  .about-card {
+    background: white; border-radius: 16px; padding: 2rem 1.5rem; text-align: center;
+    border: 1px solid var(--gray-200); box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s;
+  }
+  .about-card:hover { border-color: var(--blue); box-shadow: 0 15px 40px rgba(37,99,235,0.12); transform: translateY(-4px); }
+  .about-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .about-card h4 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .about-card p { color: var(--gray-500); font-size: 0.82rem; line-height: 1.5; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--navy); }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .service-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px; padding: 2rem 1.75rem; transition: all 0.35s; cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s var(--transition);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover {
+    border-color: rgba(37,99,235,0.35); background: rgba(37,99,235,0.07);
+    transform: translateY(-6px); box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+  }
+  .service-icon {
+    width: 52px; height: 52px; background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(37,99,235,0.08));
+    border: 1px solid rgba(37,99,235,0.25); border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.5rem;
+    transition: all 0.3s;
+  }
+  .service-card:hover .service-icon { background: rgba(37,99,235,0.25); border-color: var(--blue); }
+  .service-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--white); margin-bottom: 0.75rem; }
+  .service-card p { color: var(--gray-400); font-size: 0.875rem; line-height: 1.65; }
+
+  /* ── EQUIPMENT ── */
+  #equipment { background: linear-gradient(180deg, var(--navy-800) 0%, var(--navy) 100%); }
+  .equip-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 3.5rem; }
+  .equip-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px; padding: 1.75rem 1.25rem; text-align: center; transition: all 0.35s; cursor: default;
+  }
+  .equip-card:hover {
+    border-color: rgba(249,115,22,0.4); background: rgba(249,115,22,0.07);
+    transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+  .equip-icon {
+    font-size: 2.5rem; margin-bottom: 1rem; transition: transform 0.3s;
+  }
+  .equip-card:hover .equip-icon { transform: scale(1.15) rotate(-3deg); }
+  .equip-card h4 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem; }
+  .equip-card p { color: var(--gray-400); font-size: 0.78rem; line-height: 1.5; }
+  .equip-tag {
+    display: inline-block; margin-top: 0.75rem;
+    background: rgba(249,115,22,0.15); border: 1px solid rgba(249,115,22,0.25);
+    color: var(--orange); font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; padding: 3px 10px; border-radius: 99px;
+  }
+
+  /* ── WHY CHOOSE US ── */
+  #why { background: var(--gray-50); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .why-card {
+    background: white; border: 1px solid var(--gray-200); border-radius: 18px;
+    padding: 2.5rem 2rem; transition: all 0.35s; position: relative; overflow: hidden;
+  }
+  .why-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+  }
+  .why-card:hover::after { transform: scaleX(1); }
+  .why-card:hover { border-color: var(--blue); box-shadow: 0 20px 60px rgba(37,99,235,0.12); transform: translateY(-5px); }
+  .why-icon {
+    width: 58px; height: 58px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    border-radius: 16px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; margin-bottom: 1.5rem; box-shadow: 0 8px 25px rgba(37,99,235,0.3);
+  }
+  .why-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.75rem; }
+  .why-card p { color: var(--gray-500); font-size: 0.875rem; line-height: 1.7; }
+  .why-content .section-heading { color: var(--navy); }
+  .why-content .section-sub { color: var(--gray-500); }
+
+  /* ── PROCESS ── */
+  #process { background: var(--navy); }
+  .process-timeline { position: relative; margin-top: 4rem; }
+  .process-line {
+    position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(180deg, var(--blue), var(--orange));
+    transform: translateX(-50%);
+  }
+  .process-steps { display: flex; flex-direction: column; gap: 3rem; }
+  .process-step {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;
+  }
+  .process-step:nth-child(odd) .step-content { grid-column: 1; text-align: right; }
+  .process-step:nth-child(odd) .step-empty { grid-column: 3; }
+  .process-step:nth-child(even) .step-empty { grid-column: 1; }
+  .process-step:nth-child(even) .step-content { grid-column: 3; text-align: left; }
+  .step-node {
+    width: 56px; height: 56px; background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    border: 4px solid var(--navy); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 1.1rem; color: white;
+    z-index: 2; position: relative; box-shadow: 0 0 0 8px rgba(37,99,235,0.15);
+  }
+  .step-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 1.75rem 2rem;
+  }
+  .step-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .step-card p { color: var(--gray-400); font-size: 0.875rem; line-height: 1.6; }
+
+  /* ── STATS ── */
+  #stats { background: linear-gradient(135deg, var(--blue-dark) 0%, #1e40af 50%, var(--navy) 100%); }
+  .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 3.5rem;
+    color: var(--white); letter-spacing: -2px; line-height: 1;
+  }
+  .stat-unit { color: var(--orange); }
+  .stat-slash {
+    display: block; font-size: 1.5rem; font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1;
+  }
+  .stat-label {
+    color: rgba(255,255,255,0.65); font-size: 0.82rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1.5px; margin-top: 0.75rem;
+  }
+  .stat-divider { width: 1px; background: rgba(255,255,255,0.15); }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--navy-800); }
+  .testimonials-heading .section-heading { margin-bottom: 3.5rem; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .testimonial-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 2.5rem 2rem; position: relative; transition: all 0.35s;
+  }
+  .testimonial-card:hover { border-color: rgba(37,99,235,0.35); background: rgba(37,99,235,0.06); transform: translateY(-5px); }
+  .quote-mark {
+    font-family: 'Poppins', sans-serif; font-size: 5rem; line-height: 1; color: var(--blue);
+    opacity: 0.2; position: absolute; top: 1rem; left: 1.5rem; font-weight: 900;
+  }
+  .stars-row { color: #FBBF24; font-size: 1rem; margin-bottom: 1.25rem; letter-spacing: 3px; }
+  .testimonial-card blockquote { color: var(--gray-300); font-size: 0.95rem; line-height: 1.75; font-style: italic; margin-bottom: 1.5rem; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; color: white; flex-shrink: 0;
+  }
+  .author-avatar.blue { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); }
+  .author-avatar.orange { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); }
+  .author-avatar.green { background: linear-gradient(135deg, #10B981, #059669); }
+  .author-name { font-weight: 700; color: var(--white); font-size: 0.95rem; }
+  .author-role { color: var(--gray-400); font-size: 0.78rem; margin-top: 2px; }
+
+  /* ── TRUCK IMAGES ── */
+  #trucks { background: var(--navy); }
+  .trucks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .truck-img-card {
+    border-radius: 18px; overflow: hidden; position: relative; cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: all 0.35s;
+  }
+  .truck-img-card:hover { transform: scale(1.03) translateY(-4px); box-shadow: 0 25px 60px rgba(0,0,0,0.5); }
+  .truck-img-card img { width: 100%; height: 240px; object-fit: cover; display: block; transition: transform 0.5s; }
+  .truck-img-card:hover img { transform: scale(1.08); }
+  .truck-img-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 1.25rem;
+    background: linear-gradient(to top, rgba(15,23,42,0.95), transparent);
+  }
+  .truck-img-overlay h4 { color: white; font-weight: 700; font-size: 1rem; }
+  .truck-img-overlay span { color: var(--orange); font-size: 0.78rem; font-weight: 600; }
+
+  /* ── FAQ ── */
+  #faq { background: var(--gray-50); }
+  .faq-content .section-heading { color: var(--navy); }
+  .faq-content .section-sub { color: var(--gray-500); }
+  .faq-list { margin-top: 3rem; max-width: 800px; }
+  .faq-item {
+    background: white; border: 1px solid var(--gray-200); border-radius: 14px;
+    margin-bottom: 1rem; overflow: hidden; transition: all 0.3s;
+  }
+  .faq-item.open { border-color: var(--blue); box-shadow: 0 8px 25px rgba(37,99,235,0.1); }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 1.5rem 1.75rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem;
+    color: var(--navy); transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--blue); }
+  .faq-item.open .faq-q { color: var(--blue); }
+  .faq-q-icon { font-size: 1.2rem; transition: transform 0.3s; color: var(--gray-400); flex-shrink: 0; }
+  .faq-item.open .faq-q-icon { transform: rotate(45deg); color: var(--blue); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--transition); }
+  .faq-item.open .faq-a { max-height: 200px; }
+  .faq-a p { padding: 0 1.75rem 1.5rem; color: var(--gray-500); font-size: 0.9rem; line-height: 1.75; }
+  .faq-right { position: sticky; top: 100px; }
+  .faq-cta-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+    border-radius: 20px; padding: 2.5rem; text-align: center; border: 1px solid rgba(255,255,255,0.08);
+  }
+  .faq-cta-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; color: white; font-size: 1.3rem; margin-bottom: 0.75rem; }
+  .faq-cta-card p { color: var(--gray-400); font-size: 0.875rem; line-height: 1.65; margin-bottom: 1.75rem; }
+  .faq-layout { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+  .contact-info-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .contact-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;
+    transition: all 0.3s;
+  }
+  .contact-card:hover { border-color: rgba(37,99,235,0.35); background: rgba(37,99,235,0.07); }
+  .contact-card-icon {
+    width: 46px; height: 46px; background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;
+    box-shadow: 0 6px 20px rgba(37,99,235,0.3);
+  }
+  .contact-card h4 { color: var(--white); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .contact-card p, .contact-card a { color: var(--gray-400); font-size: 0.85rem; line-height: 1.6; text-decoration: none; }
+  .contact-card a:hover { color: var(--blue-light); }
+  .contact-form-wrap {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px; padding: 2.5rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; color: var(--gray-300); font-size: 0.82rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 0.3px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px; padding: 0.875rem 1rem; color: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: all 0.25s; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--blue); background: rgba(37,99,235,0.08); box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--gray-500); }
+  .form-group select option { background: var(--navy-800); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    color: white; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem;
+    border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s;
+    box-shadow: 0 8px 30px rgba(249,115,22,0.35); letter-spacing: 0.3px;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(249,115,22,0.5); }
+  .form-submit.loading { opacity: 0.7; cursor: not-allowed; transform: none; }
+  .form-success {
+    display: none; text-align: center; padding: 2rem;
+    background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 12px; color: #10B981; font-weight: 600;
+  }
+
+  /* ── FOOTER ── */
+  footer { background: #070D1A; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer-main {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem;
+    padding: 5rem 0 3rem;
+  }
+  .footer-brand p { color: var(--gray-500); font-size: 0.875rem; line-height: 1.7; margin-top: 1rem; max-width: 280px; }
+  .footer-social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+  .social-btn {
+    width: 38px; height: 38px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    color: var(--gray-400); font-size: 1rem; text-decoration: none; transition: all 0.25s;
+  }
+  .social-btn:hover { background: var(--blue); border-color: var(--blue); color: white; }
+  .footer-col h5 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--white); margin-bottom: 1.25rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-col a { color: var(--gray-500); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+  .footer-col a:hover { color: var(--blue-light); }
+  .footer-contact-item { display: flex; gap: 10px; margin-bottom: 0.85rem; align-items: flex-start; }
+  .footer-contact-icon { color: var(--orange); margin-top: 2px; flex-shrink: 0; }
+  .footer-contact-text { color: var(--gray-500); font-size: 0.82rem; line-height: 1.6; }
+  .footer-contact-text a { color: var(--gray-400); text-decoration: none; }
+  .footer-contact-text a:hover { color: var(--blue-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { color: var(--gray-600); font-size: 0.82rem; }
+  .footer-bottom-right { display: flex; gap: 1.5rem; }
+  .footer-bottom-right a { color: var(--gray-600); font-size: 0.82rem; text-decoration: none; }
+  .footer-bottom-right a:hover { color: var(--gray-400); }
+
+  /* ── FLOATING BUTTONS ── */
+  #back-to-top {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 500;
+    width: 48px; height: 48px; background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    border: none; border-radius: 50%; cursor: pointer; color: white; font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 25px rgba(37,99,235,0.4); transition: all 0.3s;
+    opacity: 0; pointer-events: none; transform: translateY(20px);
+  }
+  #back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  #back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(37,99,235,0.55); }
+  #whatsapp-btn {
+    position: fixed; bottom: 5.5rem; right: 2rem; z-index: 500;
+    width: 52px; height: 52px; background: #25D366; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    box-shadow: 0 8px 25px rgba(37,211,102,0.4); transition: all 0.3s; text-decoration: none;
+    animation: waPulse 3s infinite;
+  }
+  @keyframes waPulse { 0%, 100% { box-shadow: 0 8px 25px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.3); } 50% { box-shadow: 0 8px 25px rgba(37,211,102,0.4), 0 0 0 10px rgba(37,211,102,0); } }
+  #whatsapp-btn:hover { transform: scale(1.1); }
+
+  /* ── REVEAL ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s var(--transition), transform 0.7s var(--transition); }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s var(--transition), transform 0.7s var(--transition); }
+  .reveal-left.visible { opacity: 1; transform: none; }
+  .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s var(--transition), transform 0.7s var(--transition); }
+  .reveal-right.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1200px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .equip-grid { grid-template-columns: repeat(4, 1fr); }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .footer-main { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-right { display: none; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img-wrap { display: none; }
+    .about-cards { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .equip-grid { grid-template-columns: repeat(3, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .faq-layout { grid-template-columns: 1fr; }
+    .faq-right { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .trucks-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+    .process-line { display: none; }
+    .process-step { grid-template-columns: 1fr !important; gap: 1rem; }
+    .process-step:nth-child(odd) .step-content { grid-column: 1; text-align: left; }
+    .process-step .step-empty { display: none; }
+    .step-node { margin: 0 auto; }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .about-features { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .equip-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-divider { display: none; }
+    .trucks-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-main { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    .about-cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .hero-headline { font-size: 2.2rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .about-cards { grid-template-columns: 1fr; }
+    .equip-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-logo">KB<span>Transport</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">Loading your success partner</div>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- WHATSAPP FLOAT -->
+<a id="whatsapp-btn" href="https://wa.me/1234567890" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-icon">KB</div>
+      KB<span>Transport</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Choose Us</a></li>
+      <li><a href="#equipment">Equipment</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get Started →</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#why" onclick="closeMobile()">Why Choose Us</a>
+  <a href="#equipment" onclick="closeMobile()">Equipment</a>
+  <a href="#testimonials" onclick="closeMobile()">Testimonials</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#contact" onclick="closeMobile()" style="background:linear-gradient(135deg,#F97316,#EA6C0A);color:white;text-align:center;font-weight:700;border-radius:10px;margin-top:1rem;">Get Started →</a>
+</div>
+
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="container hero-content" style="padding-top:3rem;padding-bottom:4rem;">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <div class="hero-badge-dot">24/7</div>
+          <span>Nationwide Dispatch Service — All 48 States</span>
+        </div>
+        <h1 class="hero-headline">
+          Maximize Your Miles.<br/>
+          <span class="accent">Maximize Your</span><br/>
+          <span class="line2">Profits.</span>
+        </h1>
+        <p class="hero-sub">Professional trucking dispatch and logistics solutions helping owner operators and carriers earn more while keeping their trucks moving across all 48 states.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Get Started Today →</a>
+          <a href="#about" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-card">
+            <div class="hero-stat-num"><span class="count" data-target="12">0</span><span class="unit">K+</span></div>
+            <div class="hero-stat-label">Avg Weekly Gross</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-num"><span class="count" data-target="9">0</span><span class="unit">+</span></div>
+            <div class="hero-stat-label">Equipment Types</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-num"><span class="count" data-target="48">0</span></div>
+            <div class="hero-stat-label">States Covered</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-num" style="font-size:1.5rem;">24/7</div>
+            <div class="hero-stat-label">Dispatch Support</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-truck-card">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="KB Transport LLC truck on highway" loading="lazy"/>
+          <div class="hero-truck-overlay">
+            <div class="hero-truck-badge">
+              <span>All 48 Contiguous States</span>
+
+            </div>
+          </div>
+        </div>
+        <div class="hero-floating-card">
+          <div class="hero-floating-icon">Dispatch</div>
+
+
+          <div class="hero-floating-text">
+            <div class="num">$12K+</div>
+            <div class="lbl">Avg. Weekly Revenue</div>
+          </div>
+        </div>
+        <div class="hero-floating-card2">
+          <div class="stars">★★★★★</div>
+          <div class="review-text">"Best dispatcher I've worked with"</div>
+          <div class="review-author">— Mike J., Owner Operator</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span>Scroll</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about" class="py-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal-left">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=700&q=80" alt="Professional dispatch team at work" loading="lazy"/>
+        </div>
+        <div class="about-img-badge">
+          <div class="num">500+</div>
+          <div class="lbl">Satisfied Carriers</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label reveal">About KB Transport</div>
+        <h2 class="section-heading reveal">
+          Your Trusted Partner in<br/><span>Logistics & Dispatch</span>
+        </h2>
+        <p class="section-sub reveal">KB Transport LLC is a trusted independent dispatch and logistics company serving owner operators and small fleets across the United States. Our experienced team specializes in finding high-paying loads, negotiating top rates, and handling all the back-office work so you can focus on driving.</p>
+        <div class="about-features">
+          <div class="about-feat reveal reveal-delay-1">
+            <div class="about-feat-icon">Icon</div>
+
+            <div><h4>Load Sourcing</h4><p>We find the best-paying loads for your equipment type and route preferences.</p></div>
+          </div>
+          <div class="about-feat reveal reveal-delay-2">
+            <div class="about-feat-icon">💰</div>
+            <div><h4>Rate Negotiation</h4><p>We negotiate maximum rates so you always get paid what you're worth.</p></div>
+          </div>
+          <div class="about-feat reveal reveal-delay-3">
+            <div class="about-feat-icon">🗺️</div>
+            <div><h4>Route Planning</h4><p>Efficient route planning that minimizes deadhead miles and maximizes earnings.</p></div>
+          </div>
+          <div class="about-feat reveal reveal-delay-4">
+            <div class="about-feat-icon">📋</div>
+            <div><h4>Paperwork Management</h4><p>Invoices, BOLs, rate confirmations — we handle all documentation for you.</p></div>
+          </div>
+          <div class="about-feat reveal reveal-delay-5">
+            <div class="about-feat-icon">🤝</div>
+            <div><h4>Broker Communication</h4><p>Direct broker relationships for faster booking and smoother loads.</p></div>
+          </div>
+          <div class="about-feat reveal reveal-delay-1">
+            <div class="about-feat-icon">⚖️</div>
+            <div><h4>Compliance Support</h4><p>Guidance on DOT and FMCSA regulations to keep you legal and running.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-cards" style="margin-top:4rem;">
+      <div class="about-card reveal reveal-delay-1">
+        <div class="about-card-icon">👤</div>
+        <h4>Dedicated Dispatcher</h4>
+        <p>Your own dispatcher who learns your preferences and works exclusively for your success.</p>
+      </div>
+      <div class="about-card reveal reveal-delay-2">
+        <div class="about-card-icon">💵</div>
+        <h4>Top Paying Loads</h4>
+        <p>We access premium load boards and broker networks to secure the highest-rate freight.</p>
+      </div>
+      <div class="about-card reveal reveal-delay-3">
+        <div class="about-card-icon">📞</div>
+        <h4>24/7 Support</h4>
+        <p>Round-the-clock dispatch support — we're always available when you need us most.</p>
+      </div>
+      <div class="about-card reveal reveal-delay-4">
+        <div class="about-card-icon">🇺🇸</div>
+        <h4>Nationwide Coverage</h4>
+        <p>Full coverage across all 48 contiguous US states with no lane restrictions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services" class="py-section">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto;">
+      <div class="section-label reveal" style="justify-content:center;">Our Services</div>
+      <h2 class="section-heading reveal">Everything You Need to<br/><span>Keep Rolling</span></h2>
+      <p class="section-sub reveal" style="margin:0 auto;">Comprehensive dispatch and logistics services designed to maximize your revenue and minimize your stress — all under one roof.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🎯</div>
+        <h3>Truck Dispatch Services</h3>
+        <p>We find high-paying loads that match your equipment and preferred lanes, keeping your truck loaded and profitable at all times.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">💰</div>
+        <h3>Rate Negotiation</h3>
+        <p>Our dispatchers negotiate maximum rates with brokers and shippers, ensuring you never leave money on the table.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🗺️</div>
+        <h3>Route Planning</h3>
+        <p>Efficient trip planning that minimizes deadhead miles, reduces fuel costs, and maximizes your take-home pay.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon">📑</div>
+        <h3>Broker Setup</h3>
+        <p>Complete handling of broker packets, carrier setup, and onboarding so you can start hauling faster with premium brokers.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">📋</div>
+        <h3>Paperwork Management</h3>
+        <p>Invoices, rate confirmations, bills of lading — we manage all your paperwork so you can focus on the road.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">⚖️</div>
+        <h3>Compliance Assistance</h3>
+        <p>Expert guidance on DOT regulations, FMCSA requirements, and compliance standards to protect your authority.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">📦</div>
+        <h3>Freight Coordination</h3>
+        <p>Smooth load scheduling and freight coordination that eliminates gaps between loads and maximizes drive time.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon">🏢</div>
+        <h3>Administrative Support</h3>
+        <p>Complete back-office support including check calls, tracking updates, and shipper/receiver communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EQUIPMENT ── -->
+<section id="equipment" class="py-section">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto;">
+      <div class="section-label reveal" style="justify-content:center;">Equipment We Dispatch</div>
+      <h2 class="section-heading reveal">We Dispatch <span>All Equipment</span><br/>Types Nationwide</h2>
+      <p class="section-sub reveal" style="margin:0 auto;">From standard dry van to specialized heavy haul — our dispatchers have the expertise to find premium loads for every equipment type.</p>
+    </div>
+    <div class="equip-grid">
+      <div class="equip-card reveal reveal-delay-1">
+        <div class="equip-icon">🚛</div>
+        <h4>Dry Van</h4>
+        <p>Standard enclosed trailers for general freight, palletized goods, and consumer products.</p>
+        <span class="equip-tag">Most Popular</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-2">
+        <div class="equip-icon">❄️</div>
+        <h4>Reefer</h4>
+        <p>Temperature-controlled trailers for perishables, food products, and pharmaceuticals.</p>
+        <span class="equip-tag">High Rates</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-3">
+        <div class="equip-icon">🏗️</div>
+        <h4>Flatbed</h4>
+        <p>Open deck trailers for construction materials, machinery, lumber, and oversized loads.</p>
+        <span class="equip-tag">Top Pay</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-4">
+        <div class="equip-icon">⚡</div>
+        <h4>Power Only</h4>
+        <p>Pulling shipper-owned trailers, drop-and-hook loads, and dedicated lane opportunities.</p>
+        <span class="equip-tag">Easy Miles</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-5">
+        <div class="equip-icon">📦</div>
+        <h4>Box Truck</h4>
+        <p>Straight trucks and cargo vans for local, regional, and last-mile delivery freight.</p>
+        <span class="equip-tag">Flexible</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-1">
+        <div class="equip-icon">🔥</div>
+        <h4>Hotshot</h4>
+        <p>Expedited freight delivery using pickup trucks and gooseneck trailers for time-sensitive loads.</p>
+        <span class="equip-tag">Expedited</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-2">
+        <div class="equip-icon">📐</div>
+        <h4>Step Deck</h4>
+        <p>Two-level trailers for taller cargo that exceeds standard flatbed height restrictions.</p>
+        <span class="equip-tag">Specialized</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-3">
+        <div class="equip-icon">🏛️</div>
+        <h4>Conestoga</h4>
+        <p>Tarping system trailers providing flatbed versatility with dry van-style protection.</p>
+        <span class="equip-tag">Premium</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-4">
+        <div class="equip-icon">🚐</div>
+        <h4>Sprinter Van</h4>
+        <p>Cargo vans for expedited freight, medical supplies, and time-critical small shipments.</p>
+        <span class="equip-tag">Fast Pay</span>
+      </div>
+      <div class="equip-card reveal reveal-delay-5">
+        <div class="equip-icon">⚙️</div>
+        <h4>Heavy Haul</h4>
+        <p>Oversized and overweight loads including construction equipment and industrial machinery.</p>
+        <span class="equip-tag">Top Dollar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US ── -->
+<section id="why" class="py-section">
+  <div class="container">
+    <div class="why-content" style="text-align:center;max-width:640px;margin:0 auto;">
+      <div class="section-label reveal" style="justify-content:center;">Why KB Transport</div>
+      <h2 class="section-heading reveal">Why Carriers <span>Choose Us</span><br/>Over the Competition</h2>
+      <p class="section-sub reveal" style="margin:0 auto;">We're not just a dispatch company — we're your business partner committed to growing your revenue and protecting your livelihood.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">👤</div>
+        <h3>Dedicated Dispatcher</h3>
+        <p>You get your own dedicated dispatcher who learns your equipment, preferred lanes, and business goals — not a rotating call center agent. Your dispatcher is always available and accountable to your success.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🕐</div>
+        <h3>24/7 Dispatch Support</h3>
+        <p>Breakdowns happen at 2 AM. Loads fall through on Sundays. Our dispatch team is available around the clock, 365 days a year, to handle any situation that comes up on the road.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💸</div>
+        <h3>Top Market Rates</h3>
+        <p>Our dispatchers are expert rate negotiators. We access premium broker networks and use real-time market data to ensure you're always getting the highest possible rate per mile.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-4">
+        <div class="why-icon">🧠</div>
+        <h3>Experienced Team</h3>
+        <p>Our team has years of hands-on logistics and dispatch experience. We understand the trucking industry from the driver's perspective and know exactly what it takes to maximize your revenue.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-5">
+        <div class="why-icon">🗺️</div>
+        <h3>Nationwide Coverage</h3>
+        <p>We operate across all 48 contiguous states with established broker relationships in every major freight corridor — from coast to coast, border to border, no lane is off-limits.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">⚡</div>
+        <h3>Fast Response Time</h3>
+        <p>When you need a load, we move fast. Our dispatchers respond within minutes, not hours. We keep your truck moving with minimal downtime between loads so your income stays consistent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process" class="py-section">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto;">
+      <div class="section-label reveal" style="justify-content:center;">How It Works</div>
+      <h2 class="section-heading reveal">Start Earning More in<br/><span>4 Simple Steps</span></h2>
+      <p class="section-sub reveal" style="margin:0 auto;">Getting started with KB Transport is fast and simple. Most carriers are booked on their first load within 24 hours of signing up.</p>
+    </div>
+    <div class="process-timeline" style="max-width:900px;margin:0 auto;">
+      <div class="process-line"></div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-card reveal reveal-left">
+            <h3>📋 Submit Your Information</h3>
+            <p>Fill out our quick carrier setup form with your MC number, equipment type, preferred lanes, and contact information. The whole process takes less than 10 minutes.</p>
+          </div>
+          <div class="step-node reveal">1</div>
+          <div class="step-empty"></div>
+        </div>
+        <div class="process-step">
+          <div class="step-empty"></div>
+          <div class="step-node reveal">2</div>
+          <div class="step-card reveal reveal-right">
+            <h3>👤 Get Assigned a Dispatcher</h3>
+            <p>We match you with a dedicated dispatcher who specializes in your equipment type and preferred regions. They'll learn your operation and get you set up with broker networks.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-card reveal reveal-left">
+            <h3>💰 Receive High-Paying Loads</h3>
+            <p>Your dispatcher immediately starts sourcing loads, negotiating rates, and sending you top-paying opportunities that match your preferences and maximize your revenue per mile.</p>
+          </div>
+          <div class="step-node reveal">3</div>
+          <div class="step-empty"></div>
+        </div>
+        <div class="process-step">
+          <div class="step-empty"></div>
+          <div class="step-node reveal" style="background:linear-gradient(135deg,#F97316,#EA6C0A);">4</div>
+          <div class="step-card reveal reveal-right">
+            <h3>🚛 Drive and Get Paid</h3>
+            <p>You focus on driving while we handle everything else — paperwork, check calls, broker communication, and invoicing. Just drive and collect your payment every week.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section id="stats" class="py-section">
+  <div class="container">
+    <div class="stats-grid" style="align-items:center;">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span class="count-stat" data-target="500">0</span><span class="stat-unit">+</span></div>
+        <div class="stat-label">Satisfied Carriers</div>
+      </div>
+      <div class="stat-divider" style="height:80px;"></div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num"><span class="count-stat" data-target="15">0</span><span class="stat-unit">K+</span></div>
+        <div class="stat-label">Loads Delivered</div>
+      </div>
+      <div class="stat-divider" style="height:80px;"></div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num"><span class="count-stat" data-target="48">0</span></div>
+        <div class="stat-label">States Covered</div>
+      </div>
+      <div class="stat-divider" style="height:80px;"></div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num" style="font-size:3rem;">24<span class="stat-unit">/7</span></div>
+        <div class="stat-label">Dispatch Support</div>
+      </div>
+      <div class="stat-divider" style="height:80px;"></div>
+      <div class="stat-item reveal reveal-delay-4">
+        <div class="stat-num"><span class="count-stat" data-target="98">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">Customer Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials" class="py-section">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto;" class="testimonials-heading">
+      <div class="section-label reveal" style="justify-content:center;">Carrier Reviews</div>
+      <h2 class="section-heading reveal">What Our <span>Carriers Say</span><br/>About Working With Us</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="quote-mark">"</div>
+        <div class="stars-row">★★★★★</div>
+        <blockquote>KB Transport LLC completely transformed my business. My weekly revenue jumped from $6,000 to over $12,000 within the first month. Their dispatchers are professional, responsive, and always fighting to get me the best rate. I haven't looked for a load myself since joining.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar blue">MJ</div>
+          <div>
+            <div class="author-name">Mike Johnson</div>
+            <div class="author-role">Owner Operator — Dry Van, Chicago IL</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="quote-mark">"</div>
+        <div class="stars-row">★★★★★</div>
+        <blockquote>I've worked with three different dispatch companies over five years, and KB Transport is in a different league. They always find quality loads, negotiate excellent rates, and the paperwork is always handled correctly. My dispatcher actually knows my business and treats me like a partner, not just another carrier.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar orange">SM</div>
+          <div>
+            <div class="author-name">Sarah Martinez</div>
+            <div class="author-role">Carrier Owner — Reefer Fleet, Dallas TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="quote-mark">"</div>
+        <div class="stars-row">★★★★★</div>
+        <blockquote>Running a small fleet of five trucks used to be overwhelming. KB Transport handles dispatch for all my drivers, and the communication is outstanding. They're available any time I need them and their rate negotiation skills alone have increased my net profit by over 30%. Highly recommended to any serious operator.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar green">RD</div>
+          <div>
+            <div class="author-name">Robert Davis</div>
+            <div class="author-role">Fleet Owner — 5 Trucks, Atlanta GA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUCKS GALLERY ── -->
+<section id="trucks" class="py-section">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto;">
+      <div class="section-label reveal" style="justify-content:center;">Equipment Gallery</div>
+      <h2 class="section-heading reveal">The Fleet We <span>Dispatch</span></h2>
+    </div>
+    <div class="trucks-grid">
+      <div class="truck-img-card reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="Dry Van truck on highway" loading="lazy"/>
+        <div class="truck-img-overlay"><h4>Dry Van</h4><span>Standard Enclosed Freight</span></div>
+      </div>
+      <div class="truck-img-card reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80" alt="Reefer truck on highway" loading="lazy"/>
+        <div class="truck-img-overlay"><h4>Reefer</h4><span>Temperature Controlled</span></div>
+      </div>
+      <div class="truck-img-card reveal reveal-delay-3">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Flatbed truck on highway" loading="lazy"/>
+        <div class="truck-img-overlay"><h4>Flatbed</h4><span>Open Deck Transport</span></div>
+      </div>
+      <div class="truck-img-card reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Hotshot truck with trailer" loading="lazy"/>
+        <div class="truck-img-overlay"><h4>Hotshot</h4><span>Expedited Delivery</span></div>
+      </div>
+      <div class="truck-img-card reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&q=80" alt="Step deck truck on highway" loading="lazy"/>
+        <div class="truck-img-overlay"><h4>Step Deck</h4><span>Oversized Cargo</span></div>
+      </div>
+      <div class="truck-img-card reveal reveal-delay-3">
+        <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80" alt="Heavy haul truck on highway" loading="lazy"/>
+        <div class="truck-img-overlay"><h4>Heavy Haul</h4><span>Specialized Transport</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="py-section">
+  <div class="container">
+    <div class="faq-content" style="text-align:center;max-width:640px;margin:0 auto 3rem;">
+      <div class="section-label reveal" style="justify-content:center;">Common Questions</div>
+      <h2 class="section-heading reveal">Frequently Asked <span>Questions</span></h2>
+      <p class="section-sub reveal" style="margin:0 auto;">Everything you need to know about working with KB Transport LLC. Can't find your answer? Email us at james@kbtransportllc.com</p>
+    </div>
+    <div class="faq-layout">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How much do dispatch services cost?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Our dispatch fee is a small percentage of the gross load rate — typically between 5–10%. This means we only earn when you earn, and we're always motivated to get you the highest possible rates. No setup fees, no monthly minimums, and no hidden charges.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Do you work in all 48 states?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Yes! KB Transport LLC provides dispatch services across all 48 contiguous United States. We have established broker relationships in every major freight corridor and can find loads for any region you prefer to run.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What equipment types do you dispatch?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a"><p>We dispatch a wide range of equipment including dry van, reefer, flatbed, step deck, power only, box truck, hotshot, Conestoga, sprinter van, and heavy haul. If you have specialized equipment, contact us and we'll discuss how we can help.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Do you provide 24/7 dispatch support?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Absolutely. Our dispatch team is available 24 hours a day, 7 days a week, 365 days a year. Whether you have a late-night breakdown, need a Saturday morning load, or have an urgent issue on a holiday — we're always just a call or text away.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Can owner operators join KB Transport?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Yes, owner operators are our primary clients! You need an active MC number and authority, a valid USDOT number, and current insurance. We work with both new and experienced owner operators, as well as small fleet owners. We welcome drivers at every experience level.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How quickly can I start receiving loads?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Most carriers are set up and receiving loads within 24–48 hours of signing up. Once we receive your documents and complete carrier setup with our broker network, your dedicated dispatcher will begin sourcing loads immediately. Some carriers get their first load the same day they sign up.</p></div>
+        </div>
+      </div>
+      <div class="faq-right">
+        <div class="faq-cta-card">
+          <div style="font-size:3rem;margin-bottom:1rem;">🚛</div>
+          <h3>Ready to Start Earning More?</h3>
+          <p>Join hundreds of owner operators and carriers who trust KB Transport LLC to maximize their revenue every week.</p>
+          <a href="#contact" class="btn-primary" style="display:block;text-align:center;">Get Started Today →</a>
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
+            <p style="color:#94A3B8;font-size:0.82rem;margin-bottom:0.75rem;">📞 Available 24/7</p>
+            <a href="mailto:james@kbtransportllc.com" style="color:#3B82F6;font-size:0.85rem;word-break:break-all;">james@kbtransportllc.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" class="py-section">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 3rem;">
+      <div class="section-label reveal" style="justify-content:center;">Get In Touch</div>
+      <h2 class="section-heading reveal">Ready To <span>Grow</span><br/>Your Business?</h2>
+      <p class="section-sub reveal" style="margin:0 auto;">Fill out the form below and a member of our team will contact you within hours to get you set up and on the road to higher earnings.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-cards">
+          <div class="contact-card reveal reveal-delay-1">
+            <div class="contact-card-icon">📧</div>
+            <div>
+              <h4>Email Us</h4>
+              <a href="mailto:james@kbtransportllc.com">james@kbtransportllc.com</a>
+              <p>We respond within 1–2 hours on business days.</p>
+            </div>
+          </div>
+          <div class="contact-card reveal reveal-delay-2">
+            <div class="contact-card-icon">📍</div>
+            <div>
+              <h4>Our Office</h4>
+              <p>1610 12th Ave SW<br/>Cedar Rapids, IA 52404-1720<br/>United States</p>
+            </div>
+          </div>
+          <div class="contact-card reveal reveal-delay-3">
+            <div class="contact-card-icon">🕐</div>
+            <div>
+              <h4>Dispatch Hours</h4>
+              <p>24/7 — 365 Days a Year<br/>We never close. Your truck never stops.</p>
+            </div>
+          </div>
+          <div class="contact-card reveal reveal-delay-4">
+            <div class="contact-card-icon">🇺🇸</div>
+            <div>
+              <h4>Service Area</h4>
+              <p>All 48 Contiguous United States<br/>No lane restrictions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal reveal-right">
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;color:white;font-size:1.3rem;margin-bottom:0.5rem;">Start Your Application</h3>
+        <p style="color:var(--gray-400);font-size:0.875rem;margin-bottom:1.75rem;">Most carriers are approved and dispatched within 24 hours.</p>
+        <div id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" placeholder="John Smith" required/></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="+1 (555) 000-0000" required/></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email Address *</label><input type="email" placeholder="john@example.com" required/></div>
+            <div class="form-group"><label>Company Name</label><input type="text" placeholder="Your Company LLC"/></div>
+          </div>
+          <div class="form-group">
+            <label>Equipment Type *</label>
+            <select required>
+              <option value="">Select Equipment Type</option>
+              <option>Dry Van</option>
+              <option>Reefer</option>
+              <option>Flatbed</option>
+              <option>Power Only</option>
+              <option>Box Truck</option>
+              <option>Hotshot</option>
+              <option>Step Deck</option>
+              <option>Conestoga</option>
+              <option>Sprinter Van</option>
+              <option>Heavy Haul</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your operation, preferred lanes, and any questions you have..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm(this)">🚀 Submit Application</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you! Your application has been received. A KB Transport dispatcher will contact you within 24 hours to get you started.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="font-size:1.5rem;display:inline-flex;">
+          <div class="nav-logo-icon">KB</div>
+          KB<span>Transport</span>
+        </a>
+        <p>Professional Truck Dispatch Services Across America. We keep your truck moving and your profits growing — 24 hours a day, 7 days a week, coast to coast.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-btn" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#hero">→ Home</a></li>
+          <li><a href="#about">→ About Us</a></li>
+          <li><a href="#services">→ Services</a></li>
+          <li><a href="#why">→ Why Choose Us</a></li>
+          <li><a href="#equipment">→ Equipment</a></li>
+          <li><a href="#contact">→ Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Our Services</h5>
+        <ul>
+          <li><a href="#services">→ Load Sourcing</a></li>
+          <li><a href="#services">→ Rate Negotiation</a></li>
+          <li><a href="#services">→ Broker Setup</a></li>
+          <li><a href="#services">→ Route Planning</a></li>
+          <li><a href="#services">→ Paperwork Management</a></li>
+          <li><a href="#services">→ 24/7 Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Info</h5>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📧</span>
+          <div class="footer-contact-text"><a href="mailto:james@kbtransportllc.com">james@kbtransportllc.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <div class="footer-contact-text">1610 12th Ave SW<br/>Cedar Rapids, IA 52404-1720<br/>United States</div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">⏰</span>
+          <div class="footer-contact-text">24/7 Dispatch Support<br/>365 Days a Year</div>
+        </div>
+        <div style="margin-top:1.25rem;">
+          <a href="#contact" class="btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">Get Started →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 KB Transport LLC. All Rights Reserved. | Cedar Rapids, Iowa</p>
+      <div class="footer-bottom-right">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Carrier Agreement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── LOADER ──
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.style.transition = 'opacity 0.6s ease';
+    loader.style.opacity = '0';
+    setTimeout(() => { loader.style.display = 'none'; startReveal(); }, 600);
+  }, 2000);
+});
+
+// ── NAVBAR SCROLL ──
+const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  backToTop.classList.toggle('visible', window.scrollY > 300);
+});
+
+// ── HAMBURGER ──
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+// ── SCROLL REVEAL ──
+function startReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+}
+
+// ── COUNT UP ──
+function animateCount(el, target, duration = 1800) {
+  let start = 0;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(step);
+}
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = parseInt(e.target.dataset.target);
+      animateCount(e.target, target);
+      countObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.count, .count-stat').forEach(el => countObserver.observe(el));
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── FORM SUBMIT ──
+function submitForm(btn) {
+  btn.classList.add('loading');
+  btn.textContent = '⏳ Submitting...';
+  setTimeout(() => {
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }, 1500);
+}
+
+// ── SMOOTH NAV LINKS ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ── ACTIVE NAV HIGHLIGHT ──
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? '#3B82F6' : '';
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
