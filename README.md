@@ -65,4 +65,3 @@ This repository is suitable for **GitHub Pages** because it’s a static site.
 ## Screenshots
 
 ![kb-transport-llc-website dashboard](docs/screenshots/app.png)
-
