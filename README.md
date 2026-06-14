@@ -62,3 +62,7 @@ This repository is suitable for **GitHub Pages** because it’s a static site.
 ## Notes / limitations
 - The contact form simulates submission in the browser and does not send data to a server.
 
+## Screenshots
+
+![kb-transport-llc-website dashboard](docs/screenshots/app.png)
+
