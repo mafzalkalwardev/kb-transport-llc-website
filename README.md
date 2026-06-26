@@ -2,7 +2,7 @@
 
 # ðŸš€ Kb Transport Llc Website
 
-**Official website for KB Transport LLC Ã¢â‚¬â€ a professional trucking and dispatch company providing nationwide logistics solutions across the United States.**
+**Official website for KB Transport LLC - a professional trucking and dispatch company providing nationwide logistics solutions across the United States.**
 
 Documented - MIT licensed - Maintained
 
@@ -38,7 +38,7 @@ Professional dispatch and logistics marketing website for KB Transport LLC.
   - Scroll reveal animations
   - Counter animations
   - FAQ expand/collapse
-  - Contact form "submitâ€ simulation (no backend)
+  - Contact form "submit" simulation (no backend)
 
 ## Local preview
 1. Open `index.html` in your browser.
