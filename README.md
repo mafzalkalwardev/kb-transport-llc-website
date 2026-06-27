@@ -1,57 +1,53 @@
-﻿<div align="center">
+<div align="center">
 
-# ðŸš€ Kb Transport Llc Website
+# KB Transport LLC — Dispatch & Logistics Website
 
-**Official website for KB Transport LLC - a professional trucking and dispatch company providing nationwide logistics solutions across the United States.**
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&duration=2800&pause=700&color=1E40AF&center=true&vCenter=true&width=900&lines=Professional+Trucking+%26+Dispatch+Website;Responsive+Static+Marketing+Site;Built+by+Muhammad+Afzal+Kalwar" alt="Typing SVG" />
 
-Documented - MIT licensed - Maintained
-
-![HTML5](https://img.shields.io/badge/HTML5-Web-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-[![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+</p>
 
 </div>
 
 ---
 
+## Project Showcase
+
+Professional dispatch and logistics marketing website for **KB Transport LLC** — single-page responsive layout with hero, services, equipment gallery, FAQ, testimonials, and contact form.
+
+**Live:** [mafzalkalwardev.github.io/kb-transport-llc-website](https://mafzalkalwardev.github.io/kb-transport-llc-website/)
+
 ## Screenshots
 
-![Application screenshot](docs/screenshots/app.png)
+| Desktop | Mobile |
+|---|---|
+| ![Desktop](./docs/screenshots/homepage.png) | ![Mobile](./docs/screenshots/mobile.png) |
 
+## Key Features
 
-## ðŸ Contribution graph
+- Scroll reveal and counter animations
+- FAQ accordion, equipment gallery, stats section
+- Contact form (client-side demo)
+- Fully responsive mobile-first design
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mafzalkalwardev/kb-transport-llc-website/output/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mafzalkalwardev/kb-transport-llc-website/output/snake.svg" />
-  <img alt="Contribution snake" src="https://raw.githubusercontent.com/mafzalkalwardev/kb-transport-llc-website/output/snake.svg" />
-</picture>
+## Quick Start
+
+Open `index.html` in a browser or deploy to GitHub Pages.
 
 ---
 
-Professional dispatch and logistics marketing website for KB Transport LLC.
+## About the Developer
 
-## What's included
-- Single-page website (`index.html`) with responsive layout
-- Sections: Hero, About, Services, Equipment, Why Choose Us, Process, Stats, Testimonials, Equipment Gallery, FAQ, Contact, Footer
-- Client-side behavior for:
-  - Scroll reveal animations
-  - Counter animations
-  - FAQ expand/collapse
-  - Contact form "submit" simulation (no backend)
+**Muhammad Afzal Kalwar** — [@mafzalkalwardev](https://github.com/mafzalkalwardev) · [mafzalkalwardev.github.io](https://mafzalkalwardev.github.io)
 
-## Local preview
-1. Open `index.html` in your browser.
+<details>
+<summary>SEO Keywords</summary>
+Muhammad Afzal Kalwar, mafzalkalwardev, trucking website, dispatch logistics HTML, transport company website Pakistan
+</details>
 
-## Deployment (GitHub)
-This repository is suitable for **GitHub Pages** because it's a static site.
-- GitHub Pages works best when your `index.html` is served from the repo root.
+---
 
-## Repository structure
-- `index.html` - the website
-- `README.md` - this documentation
-- `.gitignore` - git ignore rules
-
-## Notes / limitations
-- The contact form simulates submission in the browser and does not send data to a server.
-
+<div align="center"><sub>Built by Muhammad Afzal Kalwar · FT Solutions</sub></div>
