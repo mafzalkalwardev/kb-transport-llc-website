@@ -1,37 +1,70 @@
 <div align="center">
 
-# KB Transport LLC — Dispatch & Logistics Website
+# KB Transport LLC Website
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&duration=2800&pause=700&color=1E40AF&center=true&vCenter=true&width=900&lines=Professional+Trucking+%26+Dispatch+Website;Responsive+Static+Marketing+Site;Built+by+Muhammad+Afzal+Kalwar" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=28&duration=2800&pause=700&color=F5A623&center=true&vCenter=true&width=900&lines=Logistics+%2B+Trucking+Website;Responsive+Business+Pages;Professional+Brand+Presence;Built+for+KB+Transport+LLC" alt="Typing SVG" />
 
 <p>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://komarev.com/ghpvc/?username=mafzalkalwardev&label=Project%20Views&color=f5a623&style=for-the-badge" alt="Project views" />
+  <img src="https://img.shields.io/github/stars/mafzalkalwardev/kb-transport-llc-website?style=for-the-badge&color=22c55e" alt="GitHub stars" />
+  <img src="https://img.shields.io/github/forks/mafzalkalwardev/kb-transport-llc-website?style=for-the-badge&color=f59e0b" alt="GitHub forks" />
+  <img src="https://img.shields.io/github/license/mafzalkalwardev/kb-transport-llc-website?style=for-the-badge&color=64748b" alt="License" />
+</p>
+
+<p>
+  <img src="https://skillicons.dev/icons?i=html,css,js" alt="Skill icons" />
+</p>
+
+<p>
+  <strong>Professional logistics and trucking website for KB Transport LLC with responsive layout and clear service pages.</strong>
 </p>
 
 </div>
 
 ---
 
-## Project Showcase
+## Trophy Cards
 
-Professional dispatch and logistics marketing website for **KB Transport LLC** — single-page responsive layout with hero, services, equipment gallery, FAQ, testimonials, and contact form.
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=mafzalkalwardev&theme=algolia&no-frame=true&no-bg=true&margin-w=12&margin-h=12&column=4" alt="GitHub trophy cards" />
+</div>
 
-**Live:** [mafzalkalwardev.github.io/kb-transport-llc-website](https://mafzalkalwardev.github.io/kb-transport-llc-website/)
+---
 
-## Screenshots
+## Stats Cards
 
-| Desktop | Mobile |
-|---|---|
-| ![Desktop](./docs/screenshots/homepage.png) | ![Mobile](./docs/screenshots/mobile.png) |
+<div align="center">
+  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=mafzalkalwardev&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="GitHub stats" />
+  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=mafzalkalwardev&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
+</div>
 
-## Key Features
+---
 
-- Scroll reveal and counter animations
-- FAQ accordion, equipment gallery, stats section
-- Contact form (client-side demo)
-- Fully responsive mobile-first design
+## Activity Graph
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mafzalkalwardev&theme=react-dark&hide_border=true&area=true" alt="GitHub activity graph" />
+</div>
+
+---
+
+## Contribution Snake
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mafzalkalwardev/google-voice-dispatch-agent/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mafzalkalwardev/google-voice-dispatch-agent/output/github-contribution-grid-snake.svg">
+    <img alt="Contribution snake" src="https://raw.githubusercontent.com/mafzalkalwardev/google-voice-dispatch-agent/output/github-contribution-grid-snake.svg">
+  </picture>
+</div>
+
+---
+
+## SEO Keywords
+
+`KB Transport` `trucking website` `logistics site`
+
+---
 
 ## Quick Start
 
